@@ -40,7 +40,7 @@ docker-compose exec projeto bash
 
 Instalar as dependências do projeto
 ```sh
-composer install
+composer update
 ```
 
 

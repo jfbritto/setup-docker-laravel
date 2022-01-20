@@ -1,14 +1,13 @@
 version: "3.3"
 services:
     # image project
-    projeto:
+    php:
         build: 
             args: 
                 user: usuario
                 uid: 1000
-            context: ./
+            context: ./docker/php/
             dockerfile: Dockerfile
-        image: laravel-app
         restart: unless-stopped
         working_dir: /var/www/
         volumes:
@@ -33,10 +32,10 @@ services:
         image: mysql:5.7.22
         restart: unless-stopped
         environment: 
-            MYSQL_DATABASE: ${DB_DATABASE}
-            MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
-            MYSQL_PASSWORD: ${DB_PASSWORD}
-            MYSQL_USER: ${DB_USERNAME}
+            MYSQL_DATABASE: 'nome_do_bd'
+            MYSQL_ROOT_PASSWORD: 'root'
+            MYSQL_PASSWORD: 'root'
+            MYSQL_USER: 'root'
         volumes: 
             - ./.docker/mysql/dbdata:/var/lib/mysql
         ports: 
