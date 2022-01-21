@@ -34,7 +34,7 @@ docker-compose up -d
 
 Acessar o container
 ```sh
-docker-compose exec projeto bash
+docker-compose exec php bash
 ```
 
 
